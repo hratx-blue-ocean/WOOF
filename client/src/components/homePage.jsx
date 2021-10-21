@@ -19,7 +19,6 @@ const HomePage = () => {
 
   useEffect(() => {
     axios.get('/adopt', config)
-    .then(({data}) => data.slice(0, 5))
     .then((top5) => setList(top5))
     .then(() => console.log('Top 5 adoptions loaded successfully'))
     .catch((e) => console.log(e))
