@@ -16,7 +16,6 @@ import EmailIcon from '@mui/icons-material/Email';
 import PublicIcon from '@mui/icons-material/Public';
 import { borders } from '@mui/system';
 
-
 const OrganizationCard = props => {
   const { organization } = props;
   const [orgWebsite, setOrgWebsite] = useState([]);
@@ -59,26 +58,26 @@ const OrganizationCard = props => {
               <Link
                 href={`mailto:${organization.contact.email}`}
                 target='_blank'
-                  >
-                    <EmailIcon /> {organization.contact.email}
-                  </Link>
-                ) : null}
+                >
+                  <EmailIcon /> {organization.contact.email}
+              </Link>
+            ) : null}
           </Typography>
           <Typography variant='body1'>
             {organization.contact?.phone ? ((organization.contact.phone.length > 2) ?
               <>
                 <PhoneIphoneIcon /> {organization.contact.phone}
               </>
-              : null) : null}
+            : null) : null}
           </Typography>
           <Typography variant='body1'>
             {orgWebsite !== null ? (
-                  <a href={orgWebsite}>
-                    {' '}
-                    <PublicIcon /> {orgWebsite}
-                  </a>
-                ) : null}
-              </Typography>
+              <a href={orgWebsite}>
+                {' '}
+                <PublicIcon /> {orgWebsite}
+              </a>
+            ) : null}
+          </Typography>
         </Grid>
       </Grid>
     </Box>
